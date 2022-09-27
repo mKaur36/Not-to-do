@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- CSS only -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+
+    <title>Not to do List</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="container">
+        <!-- top title -->
+        <div class="row">
+          <div class="col text-center mt-5">
+            <h1>Not To Do List</h1>
+            <hr />
+          </div>
+        </div>
+
+        <!-- form area -->
+        <form action="javascript:void(0)" onsubmit="handleOnSubmit(this)">
+          <div class="row g-2 mt-3">
+            <div class="col-md-6">
+              <input
+                name="task"
+                type="text"
+                class="form-control"
+                placeholder="Enter task title"
+                required
+              />
+            </div>
+            <div class="col-md-3">
+              <input
+                name="hr"
+                type="number"
+                class="form-control"
+                placeholder="Enter hours"
+                required
+                min="1"
+              />
+            </div>
+            <div class="col-md-3">
+              <div class="d-grid gap-2">
+                <button class="btn btn-primary">
+                  <i class="fa-solid fa-pen-to-square"></i> Add New Task
+                </button>
+              </div>
+            </div>
+          </div>
+        </form>
+        <!-- list area -->
+        <div class="row mt-5">
+          <div class="col">
+            <h2 class="text-center">Task List</h2>
+            <hr />
+
+            <table class="table table-striped">
+              <tbody id="task-list"></tbody>
+            </table>
+          </div>
+          <div class="col">
+            <h2 class="text-center">Bad List</h2>
+            <hr />
+
+            <table class="table table-striped">
+              <tbody id="bad-list"></tbody>
+            </table>
+            <div class="">
+              You could have saved =
+              <span id="totalBadHrs">0</span> Hrs
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col">
+            The total time allocated = <span id="totalHrs">0</span> hr
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
